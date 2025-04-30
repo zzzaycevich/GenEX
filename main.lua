@@ -39,37 +39,37 @@ local SETTINGS = {
 }
 
 local function checkWhitelist()
-    local success, response = pcall(function()
-        return HttpService:GetAsync(WHITELIST_URL)
-    end)
+    -- local success, response = pcall(function()
+    --    return HttpService:GetAsync(WHITELIST_URL)
+    -- end)
     
-    if success then
-        whitelist = HttpService:JSONDecode(response)
-    else
-        warn("Cannot load whitelist: " .. tostring(response))
-    end
+    --if success then
+    --    whitelist = HttpService:JSONDecode(response)
+    --else
+    --    warn("Cannot load whitelist: " .. tostring(response))
+    --end
     
-    if not table.find(whitelist, localPlayer.UserId) then
-        local blockGui = Instance.new("ScreenGui")
-        blockGui.Name = math.random(-math.huge, math.huge)
-        blockGui.Parent = CoreGui
+    --if not table.find(whitelist, localPlayer.UserId) then
+    --    local blockGui = Instance.new("ScreenGui")
+    --    blockGui.Name = math.random(-math.huge, math.huge)
+    --    blockGui.Parent = CoreGui
+    --    
+    --    local frame = Instance.new("Frame")
+    --    frame.Size = UDim2.new(1, 0, 1, 0)
+    --    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    --    frame.Parent = blockGui
+    --    
+    --    local text = Instance.new("TextLabel")
+    --    text.Text = "GenEX | Access Denied"
+    --    text.Size = UDim2.new(1, 0, 0.5, 0)
+    --    text.Position = UDim2.new(0, 0, 0.25, 0)
+    --    text.TextColor3 = Color3.fromRGB(255, 50, 50)
+    --    text.Font = Enum.Font.GothamBold
+    --    text.TextSize = 24
+    --    text.Parent = frame
         
-        local frame = Instance.new("Frame")
-        frame.Size = UDim2.new(1, 0, 1, 0)
-        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        frame.Parent = blockGui
-        
-        local text = Instance.new("TextLabel")
-        text.Text = "GenEX | Access Denied"
-        text.Size = UDim2.new(1, 0, 0.5, 0)
-        text.Position = UDim2.new(0, 0, 0.25, 0)
-        text.TextColor3 = Color3.fromRGB(255, 50, 50)
-        text.Font = Enum.Font.GothamBold
-        text.TextSize = 24
-        text.Parent = frame
-        
-        return false
-    end
+    --    return false
+    --end
     return true
 end
 
